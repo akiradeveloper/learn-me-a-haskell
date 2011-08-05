@@ -3,7 +3,6 @@
 -- Akira Hayakawa
 
 module WheelCheck where
-import Test.QuickCheck
 import Wheel
 
 prop_reverse xs = xs == (Wheel.reverse $ Wheel.reverse xs)

@@ -63,8 +63,9 @@ map f [] = []
 map f (x:xs) = (f x) : Wheel.map f xs
 
 takeWhile :: (a->Bool) -> [a] -> [a]
+takeWhile f [] = []
 takeWhile f (x:xs) = 
   if f x then x:Wheel.takeWhile f xs else []
 
 dropWhile :: (a->Bool) -> [a] -> [a]
-dropWhile = undefined
+dropWhile f = Wheel.takeWhile (not . f) 

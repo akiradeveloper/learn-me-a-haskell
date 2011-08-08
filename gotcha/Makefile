@@ -7,8 +7,14 @@ Main.o : WheelCheck.hi
 # DO NOT DELETE: End of Haskell dependencies
 
 # These lines below will not be purged if ghc -M is re-run.
-his = `ls *.hi`
-os = `ls *.o`
-targets = $(his) $(os)
+compile :
+	ghc --make Interact
+	ghc --make Main
+	ghc --make Single
+	ghc --make CharList
+
+targets = `ls *.o *.hi`
+progs = Main Single Interact CharList
 clean :
-	rm $(targets) Main
+	rm $(targets) $(progs)
+

@@ -12,3 +12,9 @@ prop_reverse xs = xs == (Wheel.reverse $ Wheel.reverse xs)
 -- import WheelCheck
 -- main = do
 --   quichCheck WheelCheck.prop_reverse
+
+-- Fail. Why?
+prop_takedropWhile xs = xs == (Wheel.takeWhile pred xs ++ Wheel.dropWhile pred xs) 
+  where
+    types = xs :: [Int]
+    pred = (<100) :: Int -> Bool

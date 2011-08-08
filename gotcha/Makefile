@@ -11,7 +11,7 @@ compile :
 	ghc --make Interact
 	ghc --make Main
 	ghc --make Single
-	ghc --make CharList
+	ghc -XGeneralizedNewtypeDeriving --make CharList
 
 targets = `ls *.o *.hi`
 progs = Main Single Interact CharList
